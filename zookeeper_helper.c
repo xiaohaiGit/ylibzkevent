@@ -609,6 +609,7 @@ int zoo_helper_get_children(struct ZookeeperHelper *zk_helper, \
     if(zk_helper == NULL)
         return -1;
     node_vector->count = 0;
+    node_vector->data = NULL;
     pthread_mutex_lock(&zk_helper->lock);
     if(zk_helper->mode == E_DESTORY_M){
         pthread_mutex_unlock(&zk_helper->lock);
